@@ -4,4 +4,7 @@
     <dimen name="header_height">230dp</dimen>
     <dimen name="form_card_top">180dp</dimen>
     <dimen name="form_max_height">620dp</dimen>
+    <dimen name="form_corner">30dp</dimen>
+    <dimen name="form_padding">24dp</dimen>
+    <dimen name="card_elevation">8dp</dimen>
 </resources>
