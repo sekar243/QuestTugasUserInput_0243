@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="screen_padding">12dp</dimen>
+    <dimen name="header_height">230dp</dimen>
+    <dimen name="form_card_top">180dp</dimen>
+    <dimen name="form_max_height">620dp</dimen>
+</resources>
