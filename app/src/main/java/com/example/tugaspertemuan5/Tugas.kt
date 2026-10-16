@@ -32,6 +32,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.text.font.FontWeight
@@ -43,20 +44,20 @@ fun  FormBiodata(modifier: Modifier) {
     val context = LocalContext.current
 
     //variabel untuk menyimapan input dari keyboard
-    val textNamaDepan by remember { mutableStateOf("") }
-    val  textNamaBelakang by remember { mutableStateOf("") }
-    val  textEmail by remember { mutableStateOf("") }
-    val textTanggal by remember { mutableStateOf("") }
-    val textExperience by remember { mutableStateOf("") }
+    var textNamaDepan by remember { mutableStateOf("") }
+    var  textNamaBelakang by remember { mutableStateOf("") }
+    var  textEmail by remember { mutableStateOf("") }
+    var textTanggal by remember { mutableStateOf("") }
+    var textExperience by remember { mutableStateOf("") }
 
     //variabel untuk menyimapan pilihan skill
-    val textAndroid by remember { mutableStateOf("") }
-    val textUIUX by remember { mutableStateOf("") }
-    val textWeb by remember { mutableStateOf("") }
+    var textAndroid by remember { mutableStateOf("") }
+    var textUIUX by remember { mutableStateOf("") }
+    var textWeb by remember { mutableStateOf("") }
 
     //variabel untuk mengatur pilihan tanggal dan pengalaman
-    val dropdownBuka by remember { mutableStateOf("") }
-    val datePickerBuka by remember { mutableStateOf("") }
+    var dropdownBuka by remember { mutableStateOf("") }
+    var datePickerBuka by remember { mutableStateOf("") }
 
     //variabel untuk menyimpan data hasil submit
     var nama by remember { mutableStateOf("") }
@@ -160,6 +161,15 @@ fun  FormBiodata(modifier: Modifier) {
                         )
                     )
 
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.spacedBy(
+                            dimensionResource(R.dimen.field_spacing)
+                        )
+                    ) {
+
+
+                    }
                 }
             }
         }
