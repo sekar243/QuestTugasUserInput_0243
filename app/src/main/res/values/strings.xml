@@ -21,4 +21,9 @@
     <string name="experience_beginner">Beginner</string>
     <string name="ecperience_intermediate">Intermediate</string>
     <string name="experience_advance">Advance</string>
+
+    <string name="proceed">Proceed</string>
+    <string name="hasil_biodata">Data Biodata</string>
+
+    <string name="date_format">dd/MM/yyyy</string>
 </resources>
