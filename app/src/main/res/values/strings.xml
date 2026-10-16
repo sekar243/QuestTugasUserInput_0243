@@ -14,16 +14,23 @@
     <string name="panah_dropdown">▼</string>
 
     <string name="pilih_skill">Pilih Skill Anda :</string>
-    <string name="skill_android">Androiod</string>
+    <string name="skill_android">Android</string>
     <string name="skill_uiux">UI/UX</string>
     <string name="skill_web">Web</string>
 
     <string name="experience_beginner">Beginner</string>
-    <string name="ecperience_intermediate">Intermediate</string>
-    <string name="experience_advance">Advance</string>
+    <string name="experience_intermediate">Intermediate</string>
+    <string name="experience_advanced">Advance</string>
 
     <string name="proceed">Proceed</string>
     <string name="hasil_biodata">Data Biodata</string>
+    <string name="result_nama">Nama: %1$s</string>
+    <string name="result_email">Email: %1$s</string>
+    <string name="result_tanggal">Tanggal Lahir: %1$s</string>
+    <string name="result_experience">Experience: %1$s</string>
+    <string name="result_skill">Skill: %1$s</string>
+    <string name="batal">Batal</string>
+    <string name="pilih">Pilih</string>
 
     <string name="date_format">dd/MM/yyyy</string>
 </resources>
