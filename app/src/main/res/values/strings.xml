@@ -12,4 +12,13 @@
     <string name="experience">Experience</string>
     <string name="pilih_tanggal">▦</string>
     <string name="panah_dropdown">▼</string>
+
+    <string name="pilih_skill">Pilih Skill Anda :</string>
+    <string name="skill_android">Androiod</string>
+    <string name="skill_uiux">UI/UX</string>
+    <string name="skill_web">Web</string>
+
+    <string name="experience_beginner">Beginner</string>
+    <string name="ecperience_intermediate">Intermediate</string>
+    <string name="experience_advance">Advance</string>
 </resources>
