@@ -46,10 +46,13 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.material3.DatePicker
 import androidx.compose.material3.DatePickerDialog
 import androidx.compose.material3.rememberDatePickerState
+import androidx.compose.ui.semantics.Role.Companion.Button
 import androidx.compose.ui.semantics.Role.Companion.Checkbox
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 
 
 @Composable
@@ -419,8 +422,66 @@ fun  FormBiodata(modifier: Modifier) {
                             Text(stringResource(R.string.skill_web))
                         }
                     }
+                    Spacer(
+                        modifier = Modifier.height(
+                            dimensionResource(R.dimen.content_spacing)
+                        )
+                    )
 
-                        }
+
+                    Button(
+                        onClick = {
+                            nama = "$textNamaDepan $textNamaBelakang"
+                            email = textEmail
+                            tanggal = textTanggal
+                            experience = textExperience
+
+                            val skills = mutableListOf<String>()
+
+                            if (textAndroid) {
+                                skills.add(
+                                    context.getString(R.string.skill_android)
+                                )
+                            }
+
+                            if (textUIUX) {
+                                skills.add(
+                                    context.getString(R.string.skill_uiux)
+                                )
+                            }
+
+                            if (textWeb) {
+                                skills.add(
+                                    context.getString(R.string.skill_web)
+                                )
+                            }
+
+                            skill = skills.joinToString(", ")
+                            jumlahSubmit++
+                        },
+                        enabled = textNamaDepan.isNotBlank() &&
+                                textNamaBelakang.isNotBlank() &&
+                                textEmail.isNotBlank() &&
+                                textTanggal.isNotBlank() &&
+                                textExperience.isNotBlank() &&
+                                (textAndroid || textUIUX || textWeb),
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(dimensionResource(R.dimen.button_height)),
+                        shape = RoundedCornerShape(
+                            dimensionResource(R.dimen.button_corner)
+                        ),
+                        colors = ButtonDefaults.buttonColors(
+                            containerColor = colorResource(R.color.title_red),
+                            disabledContainerColor =
+                                colorResource(R.color.button_disabled)
+                        )
+                    ) {
+                        Text(stringResource(R.string.proceed))
+                    }
+
+
+                }
                     }
                 }
             }
