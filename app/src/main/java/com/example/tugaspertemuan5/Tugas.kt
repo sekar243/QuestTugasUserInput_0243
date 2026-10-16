@@ -1,0 +1,14 @@
+package com.example.tugaspertemuan5
+
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
+
+@Composable
+fun  FormBiodata(modifier: Modifier) {
+    val context = LocalContext.current
+
+}
