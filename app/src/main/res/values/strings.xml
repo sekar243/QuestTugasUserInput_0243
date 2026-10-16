@@ -4,4 +4,12 @@
 
     <string name="from_tittle">Form Biodata</string>
     <string name="from_subtitle">Silahkan isi biodata Anda dibawah ini!!!</string>
+
+    <string name="nama_depan">Nama Depan</string>
+    <string name="nama_belakang">Nama Belakang</string>
+    <string name="email">Email</string>
+    <string name="tanggal_lahir">Tgl Lahir</string>
+    <string name="experience">Experience</string>
+    <string name="pilih_tanggal">▦</string>
+    <string name="panah_dropdown">▼</string>
 </resources>
