@@ -480,10 +480,76 @@ fun  FormBiodata(modifier: Modifier) {
                         Text(stringResource(R.string.proceed))
                     }
 
+                    if (cardTampil) {
+                        Spacer(
+                            modifier = Modifier.height(
+                                dimensionResource(R.dimen.field_spacing)
+                            )
+                        )
 
-                }
+                        CardHasilBiodata(
+                            nama = nama,
+                            email = email,
+                            tanggal = tanggal,
+                            experience = experience,
+                            skill = skill
+                        )
                     }
                 }
             }
         }
+    }
+}
+
+// Card hasil dibuat terpisah agar dapat digunakan kembali
+@Composable
+fun CardHasilBiodata(
+    nama: String,
+    email: String,
+    tanggal: String,
+    experience: String,
+    skill: String
+) {
+    Card(
+        modifier = Modifier.fillMaxWidth(),
+        colors = CardDefaults.cardColors(
+            containerColor = colorResource(R.color.card_result_bg)
+        ),
+        elevation = CardDefaults.cardElevation(
+            defaultElevation = dimensionResource(R.dimen.card_elevation)
+        )
+    ) {
+        Column(
+            modifier = Modifier.padding(
+                dimensionResource(R.dimen.result_padding)
+            ),
+            verticalArrangement = Arrangement.spacedBy(
+                dimensionResource(R.dimen.small_spacing)
+            )
+        ) {
+            Text(
+                text = stringResource(R.string.hasil_biodata),
+                fontWeight = FontWeight.Bold,
+                color = colorResource(R.color.title_red)
+            )
+
+            Text(
+                text = stringResource(R.string.result_nama, nama)
+            )
+            Text(
+                text = stringResource(R.string.result_email, email)
+            )
+            Text(
+                text = stringResource(R.string.result_tanggal, tanggal)
+            )
+            Text(
+                text = stringResource(R.string.result_experience, experience)
+            )
+            Text(
+                text = stringResource(R.string.result_skill, skill)
+            )
+        }
+    }
+}
+
 
