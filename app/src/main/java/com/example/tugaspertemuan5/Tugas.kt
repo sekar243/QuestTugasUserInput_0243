@@ -1,12 +1,14 @@
 package com.example.tugaspertemuan5
 
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import kotlinx.coroutines.delay
 
 @Composable
 fun  FormBiodata(modifier: Modifier) {
@@ -38,4 +40,18 @@ fun  FormBiodata(modifier: Modifier) {
     //variabel untuk mengatur tampilan card
     var  cardTampil by remember { mutableStateOf(false) }
     var jumlahSubmit by remember { mutableStateOf(0) }
+
+    LaunchedEffect(jumlahSubmit) {
+        if (jumlahSubmit > 0) {
+            cardTampil = true
+
+            delay(
+                context.resources.getInteger(
+                    R.integer.card_duration
+                ).toLong()
+            )
+
+            cardTampil = false
+        }
+    }
 }
