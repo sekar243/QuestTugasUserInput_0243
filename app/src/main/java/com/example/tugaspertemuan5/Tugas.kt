@@ -14,5 +14,6 @@ fun  FormBiodata(modifier: Modifier) {
     //variabel untuk menyimapan input dari keyboard
     val textNamaDepan by remember { mutableStateOf("") }
     val  textNamaBelakang by remember { mutableStateOf("") }
+    val  textEmail by remember { mutableStateOf("") }
 
 }
