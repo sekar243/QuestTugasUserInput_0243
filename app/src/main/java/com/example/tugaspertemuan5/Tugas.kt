@@ -1,6 +1,5 @@
 package com.example.tugaspertemuan5
 
-import android.media.Image
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
@@ -46,8 +45,6 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.material3.DatePicker
 import androidx.compose.material3.DatePickerDialog
 import androidx.compose.material3.rememberDatePickerState
-import androidx.compose.ui.semantics.Role.Companion.Button
-import androidx.compose.ui.semantics.Role.Companion.Checkbox
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
@@ -89,13 +86,7 @@ fun  FormBiodata(modifier: Modifier) {
     LaunchedEffect(jumlahSubmit) {
         if (jumlahSubmit > 0) {
             cardTampil = true
-
-            delay(
-                context.resources.getInteger(
-                    R.integer.card_duration
-                ).toLong()
-            )
-
+            delay(5000L)
             cardTampil = false
         }
     }
@@ -127,9 +118,6 @@ fun  FormBiodata(modifier: Modifier) {
                         top = dimensionResource(R.dimen.form_card_top),
                         start = dimensionResource(R.dimen.screen_padding),
                         end = dimensionResource(R.dimen.screen_padding)
-                    )
-                    .heightIn(
-                        max = dimensionResource(R.dimen.form_max_height)
                     ),
                 shape = RoundedCornerShape(
                     topStart = dimensionResource(R.dimen.form_corner),
@@ -494,6 +482,7 @@ fun  FormBiodata(modifier: Modifier) {
                             experience = experience,
                             skill = skill
                         )
+
                     }
                 }
             }
