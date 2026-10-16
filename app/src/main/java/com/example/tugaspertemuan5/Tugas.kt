@@ -18,5 +18,8 @@ fun  FormBiodata(modifier: Modifier) {
     val textTanggal by remember { mutableStateOf("") }
     val textExperience by remember { mutableStateOf("") }
 
-
+    //variabel untuk menyimapan pilihan skill
+    val textAndroid by remember { mutableStateOf("") }
+    val textUIUX by remember { mutableStateOf("") }
+    val textWeb by remember { mutableStateOf("") }
 }
