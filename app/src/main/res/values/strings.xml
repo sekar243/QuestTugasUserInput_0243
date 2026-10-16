@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Tugas Pertemuan 5</string>
     <string name="header_description">Logo laba-laba pada dinding merah</string>
+
+    <string name="from_tittle">Form Biodata</string>
+    <string name="from_subtitle">Silahkan isi biodata Anda dibawah ini!!!</string>
 </resources>
