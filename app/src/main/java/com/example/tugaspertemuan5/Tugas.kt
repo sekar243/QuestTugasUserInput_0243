@@ -42,6 +42,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.sp
+import androidx.compose.material3.DatePicker
+import androidx.compose.material3.DatePickerDialog
+import androidx.compose.material3.rememberDatePickerState
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 
 
 @Composable
@@ -329,6 +335,51 @@ fun  FormBiodata(modifier: Modifier) {
                             }
                         }
                     }
+
+                    if (datePickerBuka) {
+                        val dateState = rememberDatePickerState()
+
+                        DatePickerDialog(
+                            onDismissRequest = {
+                                datePickerBuka = false
+                            },
+                            confirmButton = {
+                                TextButton(
+                                    onClick = {
+                                        dateState.selectedDateMillis?.let {
+                                            textTanggal = SimpleDateFormat(
+                                                context.getString(
+                                                    R.string.date_format
+                                                ),
+                                                Locale.getDefault()
+                                            ).format(Date(it))
+                                        }
+
+                                        datePickerBuka = false
+                                    }
+                                ) {
+                                    Text(stringResource(R.string.pilih))
+                                }
+                            },
+                            dismissButton = {
+                                TextButton(
+                                    onClick = {
+                                        datePickerBuka = false
+                                    }
+                                ) {
+                                    Text(stringResource(R.string.batal))
+                                }
+                            }
+                        ) {
+                            DatePicker(state = dateState)
+                        }
+                    }
+
+                    Spacer(
+                        modifier = Modifier.height(
+                            dimensionResource(R.dimen.field_spacing)
+                        )
+                    )
 
                         }
                     }
