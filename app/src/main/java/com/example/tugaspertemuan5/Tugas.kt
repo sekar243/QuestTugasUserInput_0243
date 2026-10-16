@@ -11,4 +11,8 @@ import androidx.compose.ui.platform.LocalContext
 fun  FormBiodata(modifier: Modifier) {
     val context = LocalContext.current
 
+    //variabel untuk menyimapan input dari keyboard
+    val textNamaDepan by remember { mutableStateOf("") }
+    val  textNamaBelakang by remember { mutableStateOf("") }
+
 }
