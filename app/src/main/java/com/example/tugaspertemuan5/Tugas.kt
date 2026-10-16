@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 
@@ -27,4 +28,10 @@ fun  FormBiodata(modifier: Modifier) {
     val dropdownBuka by remember { mutableStateOf("") }
     val datePickerBuka by remember { mutableStateOf("") }
 
+    //variabel untuk menyimpan data hasil submit
+    var nama by remember { mutableStateOf("") }
+    var email by remember { mutableStateOf("") }
+    var tanggal by remember { mutableStateOf("") }
+    var experience by remember { mutableStateOf("") }
+    var skill by remember { mutableStateOf("") }
 }
