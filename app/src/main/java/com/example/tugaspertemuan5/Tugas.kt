@@ -34,4 +34,8 @@ fun  FormBiodata(modifier: Modifier) {
     var tanggal by remember { mutableStateOf("") }
     var experience by remember { mutableStateOf("") }
     var skill by remember { mutableStateOf("") }
+
+    //variabel untuk mengatur tampilan card
+    var  cardTampil by remember { mutableStateOf(false) }
+    var jumlahSubmit by remember { mutableStateOf(0) }
 }
