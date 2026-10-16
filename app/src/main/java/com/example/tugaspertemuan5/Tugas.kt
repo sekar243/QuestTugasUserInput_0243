@@ -15,5 +15,8 @@ fun  FormBiodata(modifier: Modifier) {
     val textNamaDepan by remember { mutableStateOf("") }
     val  textNamaBelakang by remember { mutableStateOf("") }
     val  textEmail by remember { mutableStateOf("") }
+    val textTanggal by remember { mutableStateOf("") }
+    val textExperience by remember { mutableStateOf("") }
+
 
 }
