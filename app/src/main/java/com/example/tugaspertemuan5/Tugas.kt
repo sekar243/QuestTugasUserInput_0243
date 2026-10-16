@@ -35,6 +35,7 @@ import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
@@ -47,8 +48,8 @@ fun  FormBiodata(modifier: Modifier) {
 
     //variabel untuk menyimapan input dari keyboard
     var textNamaDepan by remember { mutableStateOf("") }
-    var  textNamaBelakang by remember { mutableStateOf("") }
-    var  textEmail by remember { mutableStateOf("") }
+    var textNamaBelakang by remember { mutableStateOf("") }
+    var textEmail by remember { mutableStateOf("") }
     var textTanggal by remember { mutableStateOf("") }
     var textExperience by remember { mutableStateOf("") }
 
@@ -58,8 +59,8 @@ fun  FormBiodata(modifier: Modifier) {
     var textWeb by remember { mutableStateOf("") }
 
     //variabel untuk mengatur pilihan tanggal dan pengalaman
-    var dropdownBuka by remember { mutableStateOf("") }
-    var datePickerBuka by remember { mutableStateOf("") }
+    var dropdownBuka by remember { mutableStateOf(false) }
+    var datePickerBuka by remember { mutableStateOf(false) }
 
     //variabel untuk menyimpan data hasil submit
     var nama by remember { mutableStateOf("") }
@@ -69,7 +70,7 @@ fun  FormBiodata(modifier: Modifier) {
     var skill by remember { mutableStateOf("") }
 
     //variabel untuk mengatur tampilan card
-    var  cardTampil by remember { mutableStateOf(false) }
+    var cardTampil by remember { mutableStateOf(false) }
     var jumlahSubmit by remember { mutableStateOf(0) }
 
     LaunchedEffect(jumlahSubmit) {
@@ -154,8 +155,8 @@ fun  FormBiodata(modifier: Modifier) {
                         text = stringResource(R.string.from_subtitle),
                         fontSize = dimensionResource(
                             R.dimen.subtitle_size
-                    ).value.sp,
-                    color = colorResource(R.color.text_gray)
+                        ).value.sp,
+                        color = colorResource(R.color.text_gray)
                     )
                     Spacer(
                         modifier = Modifier.height(
@@ -212,9 +213,68 @@ fun  FormBiodata(modifier: Modifier) {
                             dimensionResource(R.dimen.field_spacing)
                         )
                     )
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.spacedBy(
+                            dimensionResource(R.dimen.field_spacing)
+                        ),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
 
+                        Box(modifier = Modifier.weight(1f)) {
+                            OutlinedTextField(
+                                value = textTanggal,
+                                onValueChange = {},
+                                modifier = Modifier.fillMaxWidth(),
+                                readOnly = true,
+                                singleLine = true,
+                                label = {
+                                    Text(
+                                        stringResource(R.string.tanggal_lahir)
+                                    )
+                                },
+                                trailingIcon = {
+                                    TextButton(
+                                        onClick = {
+                                            datePickerBuka = true
+                                        }
+                                    ) {
+                                        Text(
+                                            stringResource(R.string.pilih_tanggal)
+                                        )
+                                    }
+                                }
+                            )
+                        }
+                        Box(modifier = Modifier.weight(1f)) {
+                            OutlinedTextField(
+                                value = textExperience,
+                                onValueChange = {},
+                                modifier = Modifier.fillMaxWidth(),
+                                readOnly = true,
+                                singleLine = true,
+                                label = {
+                                    Text(
+                                        stringResource(R.string.experience)
+                                    )
+                                },
+                                trailingIcon = {
+                                    TextButton(
+                                        onClick = {
+                                            dropdownBuka = true
+                                        }
+                                    ) {
+                                        Text(
+                                            stringResource(R.string.panah_dropdown)
+                                        )
+                                    }
+                                }
+                            )
+
+                        }
                     }
                 }
             }
         }
     }
+}
