@@ -29,6 +29,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -36,6 +37,7 @@ import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.sp
 
 
@@ -167,11 +169,52 @@ fun  FormBiodata(modifier: Modifier) {
                             dimensionResource(R.dimen.field_spacing)
                         )
                     ) {
+                        OutlinedTextField(
+                            value = textNamaDepan,
+                            onValueChange = { textNamaDepan = it },
+                            modifier = Modifier.weight(1f),
+                            singleLine = true,
+                            label = {
+                                Text(stringResource(R.string.nama_depan))
+                            }
+                        )
+                        OutlinedTextField(
+                            value = textNamaBelakang,
+                            onValueChange = { textNamaBelakang = it },
+                            modifier = Modifier.weight(1f),
+                            singleLine = true,
+                            label = {
+                                Text(stringResource(R.string.nama_belakang))
+                            }
+                        )
+                    }
+                    Spacer(
+                        modifier = Modifier.height(
+                            dimensionResource(R.dimen.field_spacing)
+                        )
+                    )
 
+                    OutlinedTextField(
+                        value = textEmail,
+                        onValueChange = { textEmail = it },
+                        modifier = Modifier.fillMaxWidth(),
+                        singleLine = true,
+                        label = {
+                            Text(stringResource(R.string.email))
+                        },
+                        keyboardOptions = KeyboardOptions(
+                            keyboardType = KeyboardType.Email
+                        )
+                    )
+
+                    Spacer(
+                        modifier = Modifier.height(
+                            dimensionResource(R.dimen.field_spacing)
+                        )
+                    )
 
                     }
                 }
             }
         }
     }
-}
