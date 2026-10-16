@@ -33,6 +33,7 @@ import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.Checkbox
 import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.OutlinedTextField
@@ -45,6 +46,7 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.material3.DatePicker
 import androidx.compose.material3.DatePickerDialog
 import androidx.compose.material3.rememberDatePickerState
+import androidx.compose.ui.semantics.Role.Companion.Checkbox
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
@@ -62,9 +64,9 @@ fun  FormBiodata(modifier: Modifier) {
     var textExperience by remember { mutableStateOf("") }
 
     //variabel untuk menyimapan pilihan skill
-    var textAndroid by remember { mutableStateOf("") }
-    var textUIUX by remember { mutableStateOf("") }
-    var textWeb by remember { mutableStateOf("") }
+    var textAndroid by remember { mutableStateOf(false) }
+    var textUIUX by remember { mutableStateOf(false) }
+    var textWeb by remember { mutableStateOf(false) }
 
     //variabel untuk mengatur pilihan tanggal dan pengalaman
     var dropdownBuka by remember { mutableStateOf(false) }
@@ -380,6 +382,43 @@ fun  FormBiodata(modifier: Modifier) {
                             dimensionResource(R.dimen.field_spacing)
                         )
                     )
+                    Text(
+                        text = stringResource(R.string.pilih_skill),
+                        modifier = Modifier.fillMaxWidth(),
+                        fontSize = dimensionResource(R.dimen.skill_title_size).value.sp,
+                        fontWeight = FontWeight.Bold,
+                        color = colorResource(R.color.text_primary)
+                    )
+
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.SpaceBetween,
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Row(verticalAlignment = Alignment.CenterVertically) {
+                            Checkbox(
+                                checked = textAndroid,
+                                onCheckedChange = { textAndroid = it }
+                            )
+                            Text(stringResource(R.string.skill_android))
+                        }
+
+                        Row(verticalAlignment = Alignment.CenterVertically) {
+                            Checkbox(
+                                checked = textUIUX,
+                                onCheckedChange = { textUIUX = it }
+                            )
+                            Text(stringResource(R.string.skill_uiux))
+                        }
+
+                        Row(verticalAlignment = Alignment.CenterVertically) {
+                            Checkbox(
+                                checked = textWeb,
+                                onCheckedChange = { textWeb = it }
+                            )
+                            Text(stringResource(R.string.skill_web))
+                        }
+                    }
 
                         }
                     }
