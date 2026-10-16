@@ -33,6 +33,8 @@ import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.DropdownMenu
+import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
@@ -271,10 +273,66 @@ fun  FormBiodata(modifier: Modifier) {
                                 }
                             )
 
+                            DropdownMenu(
+                                expanded = dropdownBuka,
+                                onDismissRequest = {
+                                    dropdownBuka = false
+                                }
+                            ) {
+                                DropdownMenuItem(
+                                    text = {
+                                        Text(
+                                            stringResource(
+                                                R.string.experience_beginner
+                                            )
+                                        )
+                                    },
+                                    onClick = {
+                                        textExperience = context.getString(
+                                            R.string.experience_beginner
+                                        )
+                                        dropdownBuka = false
+                                    }
+                                )
+
+                                DropdownMenuItem(
+                                    text = {
+                                        Text(
+                                            stringResource(
+                                                R.string.experience_intermediate
+                                        )
+                                        )
+                                    },
+                                    onClick = {
+                                        textExperience = context.getString(
+                                            R.string.experience_intermediate
+                                        )
+                                        dropdownBuka = false
+                                    }
+                                )
+
+                                DropdownMenuItem(
+                                    text = {
+                                        Text(
+                                            stringResource(
+                                                R.string.experience_advanced
+                                            )
+                                        )
+                                    },
+                                    onClick = {
+                                        textExperience = context.getString(
+                                            R.string.experience_advanced
+                                        )
+                                        dropdownBuka = false
+                                    }
+                                )
+                            }
+                        }
+                    }
+
                         }
                     }
                 }
             }
         }
-    }
-}
+
