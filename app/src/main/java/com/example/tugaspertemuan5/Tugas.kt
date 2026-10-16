@@ -21,6 +21,11 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import kotlinx.coroutines.delay
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.heightIn
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
+
 
 @Composable
 fun  FormBiodata(modifier: Modifier) {
@@ -87,6 +92,28 @@ fun  FormBiodata(modifier: Modifier) {
                     .height(dimensionResource(R.dimen.header_height)),
                 contentScale = ContentScale.Crop
             )
+            Card(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(
+                        top = dimensionResource(R.dimen.form_card_top),
+                        start = dimensionResource(R.dimen.screen_padding),
+                        end = dimensionResource(R.dimen.screen_padding)
+                    )
+                    .heightIn(
+                        max = dimensionResource(R.dimen.form_max_height)
+                    ),
+                shape = RoundedCornerShape(
+                    topStart = dimensionResource(R.dimen.form_corner),
+                    topEnd = dimensionResource(R.dimen.form_corner)
+                ),
+                colors = CardDefaults.cardColors(
+                    containerColor = colorResource(R.color.form_white)
+                ),
+                elevation = CardDefaults.cardElevation(
+                    defaultElevation = dimensionResource(R.dimen.card_elevation)
+                )
+            ) { }
         }
     }
 }
