@@ -22,4 +22,9 @@ fun  FormBiodata(modifier: Modifier) {
     val textAndroid by remember { mutableStateOf("") }
     val textUIUX by remember { mutableStateOf("") }
     val textWeb by remember { mutableStateOf("") }
+
+    //variabel untuk mengatur pilihan tanggal dan pengalaman
+    val dropdownBuka by remember { mutableStateOf("") }
+    val datePickerBuka by remember { mutableStateOf("") }
+
 }
